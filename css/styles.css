@@ -18,12 +18,17 @@
     display: grid;
 }
 
+html {
+    scroll-behavior: smooth;
+  }
+
 /* Header
 ========================= */
 
 .header {
+    width: 100%;
     min-height: 765px;
-    background: url("../images/bg1.jpg"), #023C47;;
+    background: url("../images/bg1.jpg"), #023C47;
     background-position: top left;
     background-repeat: no-repeat;
     background-size: cover;
@@ -36,7 +41,7 @@
 }
 
 .header__inner {
-    min-height: 90px;
+    height: 90px;
     grid-template-columns: minmax(216px, auto) 2fr minmax(103px, auto);
     align-items: center;
 }
@@ -71,13 +76,46 @@
 }
 
 .header__nav-item {
+    margin-right: 42px;
+}
+
+.header__nav-link {
     font-family: 'Red Hat Text', sans-serif;
     font-size: 16px;
     font-weight: 500;
     line-height: 21px;
     color: rgb(255, 255, 255);
     text-transform: capitalize;
-    margin-right: 42px;
+    text-decoration: none;
+}
+
+.header__nav-item_hover > a {
+    position: relative;
+}
+
+.header__nav-item_hover > a::after {
+    content: "";
+    width: 0;
+    height: 2px;
+    background: rgba(255, 255, 255, 0.7);
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    transition: width 0.2s ease-out
+}
+
+.header__nav-item_hover:hover > a::after {
+    width: 100%;
+}
+
+.header__nav-item_hover {
+    transition: transform 0.5s ease;
+}
+
+.header__nav-item_hover:hover {
+    transform: scale(1.1);
 }
 
 .header__nav-item:last-child {
@@ -97,19 +135,43 @@
     padding: 10px 30px;
 }
 
+.button_arrow {
+    position: relative;
+}
+
+.button_arrow::before {
+    content: url('../images/arrow.svg');
+    position: absolute;
+    left: 33px;
+    top: 50%;
+    transform: translateY(-42%); /* не 50% т.к. подгонка под макет */
+  }
+
+.button_hover {
+  transition: opacity 0.4s ease,
+              box-shadow 0.4s ease;
+}
+
+.button_hover:hover {
+    cursor: pointer;
+    color: rgb(255, 255, 255);
+    opacity: 0.85;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1), 0px 4px 6px rgba(13, 96, 111, 0.08);
+}
+
 
 /* Preview
 ======================== */
-
 .preview {
     position: relative;
-    margin-top: -765px;
-    left: 0;
-    z-index: 5;
-    grid-template-columns: minmax(auto, 892px);
-    padding: 122px 0 254px;
 }
-
+.preview__wrapper {
+    position: absolute;
+    margin-top: -726px;
+    left: 0;
+    grid-template-columns: minmax(auto, 892px);
+    grid-row: 1fr;
+}
 
 .preview__title {
     font-family: 'Aleo', serif;
@@ -130,6 +192,14 @@
     margin-bottom: 46px;
 }
 
+.preview__input {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 1.2;
+    color: #F2785C;
+}
+
 .preview__input::placeholder {
     font-family: 'Aleo', serif;
     font-style: italic;
@@ -137,7 +207,6 @@
     font-size: 24px;
     line-height: 1.2;
     color: #F2785C;
-    
 }
 
 .preview__input {
@@ -165,8 +234,8 @@
 
 /* Steps
 ======================== */
-
-.steps__subtitle {
+.subtitle {
+    position: static;
     font-family: 'Red Hat Text', sans-serif;
     font-weight: 500;
     font-size: 40px;
@@ -174,7 +243,14 @@
     color: #F2785C;
     text-transform: uppercase;
     text-align: center;
+}
+
+.steps__subtitle {
     margin: 83px 0 44px;
+}
+
+.steps {
+    margin-bottom: 99px;
 }
 
 .steps__items-row {
@@ -198,12 +274,20 @@
 }
 
 .step__item:nth-child(3) {
-    justify-self: flex-end;
-    padding: 0 13px 0 10px;  
+justify-self: flex-end;
+padding: 0 13px 0 10px;  
 }
 
-.step__item-text {
-    word-wrap: break-word;
+                        .step__item_hover {
+                            transition: transform 0.4s ease,
+                                        opacity 0.5s ease;
+                                  /*    font-weight 0.1s ease; */
+                        }
+
+.step__item_hover:hover {
+    transform: scale(1.08);
+    opacity: 0.7;
+ /*   font-weight: 900; */
 }
 
 .logo-position {
@@ -211,23 +295,97 @@
 }
 
 
-/* Stories
+/* Destinations
 ======================== */
 
 
-.stories {
-    margin-top: 1219px;
+.destinations__subtitle {
+    margin-bottom: 50px;
 }
 
-.stories__subtitle {
+.destinations__wrapper {
+    max-width: 1440px;
+    min-height: 800px;
+    overflow: hidden;
+    position: relative;
+    margin-bottom: 24px;
+}
+
+                        .destinations__content {
+                            width: 2520px;
+                            height: 800px;
+                            margin: 0 auto;
+                            display: flex;
+                            flex-wrap: nowrap;
+                            justify-content: space-between;
+                            position: absolute;
+                            top: 0;
+                            left: -540px;
+                        }
+
+.destinations__image {
+    border-radius: 16px;
+    width: 100%;
+}
+
+.destinations__slide {
+    position: relative;
+}
+
+.destinations__name {
     font-family: 'Red Hat Text', sans-serif;
     font-weight: 500;
-    font-size: 40px;
+    font-size: 32px;
     line-height: 1.3;
     text-transform: uppercase;
-    color: #F2785C;
-    text-align: center;
-    margin-bottom: 41px;
+    color: rgb(255, 255, 255);
+    position: absolute;
+    left: 15px;
+    bottom: 41px;
+}
+
+.destinations__pagination {
+    margin: 0 auto;
+    width: 80px;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    margin-bottom: 40px;
+}
+
+.destination__pagination-item {
+    width: 20px;
+    height: 20px;
+    background: rgba(242, 120, 92, 0.5);
+    border-radius: 50%;
+}
+
+.destination__pagination-item_hover {
+
+}
+
+                            .destination__pagination-item_focus:focus {
+                                background-color: #F2785C;
+                            }
+
+
+
+.destinations__button {
+    display: block;
+        margin: 0 auto 83px;
+        font-size: 24px;
+        line-height: 1.3;
+        padding: 13.5px 34px 13.5px 76.5px;
+        text-align: end;
+    width: 228px;
+    height: 59px;
+}
+
+/* Stories
+======================== */
+
+.stories__subtitle {
+    margin-bottom: 45px;
 }
 
 .stories__wrapper {
@@ -243,17 +401,38 @@
 }
 
 .stories__inner {
-    grid-template-columns: minmax(auto, 400px) minmax(auto, 800px);
-    grid-template-rows: repeat(4, 1fr)  minmax(min-content, auto);
+    grid-template-columns: 33.333% minmax(auto, 800px);
+        grid-template-rows: repeat(auto, auto-fit)  minmax(min-content, auto);
+    column-gap: 40px;
+    row-gap: 30px;
 }
 
-    .stories__image {
+.stories__image-card {
+    min-height: 250px;
     filter: drop-shadow(0px 4px 4px #0D606F);
     border-radius: 16px;
-    margin-bottom: 30px;
+    overflow: hidden;
+        position: relative;
+        padding-bottom: 58%;
 }
-    .stories__image:last-of-type {
-    margin-bottom: 0;
+
+.stories__image {
+    width: 100%;
+        height: 100%;
+        object-fit: cover;  
+        object-position: center;
+        position: absolute;
+        top: 0;
+        left: 0;
+        
+}
+
+.stories__image_hover {
+    transition: transform 0.8s ease;
+}
+
+.stories__image-card_hover:hover .stories__image_hover {
+    transform: scale(1.08) translateY(-7px);
 }
 
 .stories__text-title {
@@ -273,39 +452,36 @@
     color: #0D606F;
 }
 
-.stories__link {
+.stories__link-item {
     font-family: 'Aleo', serif;
     font-weight: 700;
     font-size: 20px;
     line-height: 1.2;
     color: #0D606F;
-}
-
-.stories__item {
-    margin-left: 40px;
+            display: inline-block;
 }
 
 .stories__button {
     grid-column: 1 / 3;
-        font-size: 24px;
-        line-height: 1.3;
-        padding: 13.5px 40.5px 13.5px 76.5px;
-        text-align: end;
-        justify-self: center;
-        margin: 10px 0 101px 4px;
-    position: relative;
+    font-size: 24px;
+    line-height: 1.3;
+    padding: 13.5px 40.5px 13.5px 76.5px;
+    text-align: end;
+    justify-self: center;
+    margin: 10px 0 101px 4px;
     width: 228px;
     height: 59px;
 }
 
-.stories__button::before {
-    content: url('../images/arrow.svg');
-    position: absolute;
-    left: 33px;
-    top: 50%;
-    transform: translateY(-42%); /* не 50% т.к. подгонка под макет */
-  }
-
+.stories__link_hover .stories__link-item {
+    transition: transform 0.3s ease,
+                color 0.4s ease;
+}
+.stories__link_hover:hover .stories__link-item {
+    transform: scale(1.04);
+    color: rgba(13, 96, 111, 0.7);
+}
+                                                                    
 
   /* Footer
 ======================== */
@@ -314,32 +490,41 @@
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr;
     align-items: center;
-    position: relative;
     margin-top: -61px;
+    left:0;
 }
 
 .footer__copyright {
+    grid-column: 2 / 3;
+    padding-bottom: 7px;
     font-family: 'Red Hat Text', sans-serif;
     font-weight: 500;
     font-size: 16px;
     line-height: 1.3;
-    color: rgb(255, 255, 255);
-    text-transform: capitalize;
     text-align: center;
-    grid-column: 2 / 3;
+    text-transform: capitalize;
+    color: rgb(255, 255, 255);
 }
-
 
 .footer__logo-items {
     display: flex;
     align-items: center;
     justify-content: flex-end;
+    list-style-type: none;
 }
 
-.footer__link {
+.footer__nav {
     margin-right: 20px;
 }
 
-.footer__link:last-child {
+.footer__nav:last-child {
     margin-right: 0;
+}
+
+.footer__nav_hover img {
+    transition: transform 0.4s ease;
+}
+
+.footer__nav_hover:hover img {
+    transform: scale(1.15);
 }

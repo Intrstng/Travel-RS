@@ -24,13 +24,14 @@
             <div class="header__logo"><p>Travel portal</p></div>
                 <nav class="header__navigation">
                     <ul class="header__nav grid">
-                        <li class="header__nav-item">How it works</li>
-                        <li class="header__nav-item">Plan your trip</li>
-                        <li class="header__nav-item">Destinations</li>
-                        <li class="header__nav-item">Travel Stories</li>
+                        <li class="header__nav-item header__nav-item_hover"><a class="header__nav-link" href="#">How it works</a></li>
+                        <li class="header__nav-item header__nav-item_hover"><a class="header__nav-link" href="#plan-your-trip">Plan your trip</a></li>
+                        <li class="header__nav-item header__nav-item_hover"><a class="header__nav-link" href="#destinations">Destinations</a></li>
+                        <li class="header__nav-item header__nav-item_hover"><a class="header__nav-link" href="#travel-stories">Travel Stories</a></li>
                     </ul>
+                    <div class="header__burger"><span></span></div>
                 </nav>
-                <button class="header__button header__button_hover button">Login</button>
+                <button class="header__button button button_hover ">Login</button>
             </div>
         </div>
     </header>
@@ -39,71 +40,93 @@
 <!-- Preview
 ======================== -->
 
-        <section class="preview container grid">   
+        <section class="preview container">
+            <div class="preview__wrapper grid">
             <h1 class="preview__title">Explore the beauty of the World</h1>
             <p class="preview__text">Receive personalized recommendations for countries, hotels, activities and more</p>
             <form class="preview__search" action="/action_page.php" method="get">
-                <input class="preview__input" type="search" name="planning" id="myplanning" placeholder="What would you like to do?" required>
-                <button class="preview__button preview__button_hover button" type="submit" name="planning-button" value="Submit">Start Planning</button>
+                <input class="preview__input" type="search" name="planning" id="myplanning" placeholder="What would you like to do?">
+                <button class="preview__button button button_hover" type="submit" name="planning-button" value="Submit">Start Planning</button>
             </form>
+        </div>
         </section>
-
+   
 <!-- Steps
 ======================== -->
 
-<section class="steps ">
-            <h2 class="steps__subtitle">3 steps to the perfect trip</h2>
+<section class="steps" id="plan-your-trip">
+            <h2 class="steps__subtitle subtitle">3 steps to the perfect trip</h2>
             <div class="steps__items-row container grid">
-                <a class="step__item" href="#">
+                <a class="step__item step__item_hover" href="#">
                     <img class="step__item-logo logo-position" src="images/Cycling.svg">
                         <p class="step__item-text">Tell us what you want to do</p>
                 </a>
               
-                <a class="step__item" href="#">
+                <a class="step__item step__item_hover" href="#">
                     <img class="step__item-logo logo-position" src="images/Calendar.svg">
                         <p class="step__item-text">Share us preferable dates</p>
                 </a>
                 
-                <a class="step__item" href="#">
+                <a class="step__item step__item_hover" href="#">
                     <img class="step__item-logo logo-position" src="images/Plane.svg">
                         <p class="step__item-text">We will give you recommendations</p>
                 </a>
         </div>
 </section>
 
+<!-- Destinations
+======================== -->
+<section class="destinations" id="destinations">
+    <h2 class="destinations__subtitle subtitle">Popular destinations</h2>
+    <div class="destinations__wrapper">
+        <div class="destinations__content">
+            <div class="destinations__slide"><img class="destinations__image" src="images/Spain.jpg" alt="Spain"><span class="destinations__name">Spain</span></div>
+            <div class="destinations__slide"><img class="destinations__image" src="images/Japan.jpg" alt="Japan"><span class="destinations__name">Japan</span></div>
+            <div class="destinations__slide"><img class="destinations__image" src="images/USA.jpg" alt="USA"><span class="destinations__name">USA</span></div>
+        </div>
+    </div>
+    <div class="destinations__pagination">
+        <div class="destination__pagination-item destination__pagination-item_hover destination__pagination-item_active"></div>
+        <div class="destination__pagination-item destination__pagination-item_hover destination__pagination-item_active"></div>
+        <div class="destination__pagination-item destination__pagination-item_hover destination__pagination-item_active"></div>
+    </div>
+    <button class="destinations__button button button_arrow button_hover">Find More</button>
+
+</section>
+
 <!-- Stories
 ======================== -->
 
-<section class="stories">
-    <h2 class="stories__subtitle">Travel stories</h2>
+<section class="stories" id="travel-stories">
+    <h2 class="stories__subtitle subtitle">Travel stories</h2>
     <div class="stories__wrapper">
         <div class="stories__content">
         <div class="stories__inner container grid">
-            <img class="stories__image" src="images/boat.jpg" alt="boat">
+            <div class="stories__image-card stories__image-card_hover"><img class="stories__image stories__image_hover" src="images/boat.jpg" alt="boat"></div>
                 <div class="stories__item">
                     <h3 class="stories__text-title">10 Photos of Attractive Thailand</h3>
                     <p class="stories__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
-                    <p><a class="stories__link" href="#">Read More</a></p>
+                    <p class="stories__link stories__link_hover"><a class="stories__link-item" href="#">Read More</a></p>
                 </div>
-            <img class="stories__image" src="images/road.jpg" alt="road">
+            <div class="stories__image-card stories__image-card_hover"><img class="stories__image stories__image_hover" src="images/road.jpg" alt="road"></div>
                 <div class="stories__item">
                     <h3 class="stories__text-title">Canyonlands National Park, Utah</h3>
                     <p class="stories__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
-                    <p><a class="stories__link" href="#">Read More</a></p>
+                    <p class="stories__link stories__link_hover"><a class="stories__link-item" href="#">Read More</a></p>
                 </div>
-            <img class="stories__image" src="images/mountains.jpg" alt="mountains">
+            <div class="stories__image-card stories__image-card_hover"><img class="stories__image stories__image_hover" src="images/mountains.jpg" alt="mountains"></div>
                 <div class="stories__item">
                     <h3 class="stories__text-title">I left my heart in the Mountains!</h3>
                     <p class="stories__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
-                    <p><a class="stories__link" href="#">Read More</a></p>
+                    <p class="stories__link stories__link_hover"><a class="stories__link-item" href="#">Read More</a></p>
                 </div>
-            <img class="stories__image" src="images/van.jpg" alt="van">
+            <div class="stories__image-card stories__image-card_hover"><img class="stories__image stories__image_hover" src="images/van.jpg" alt="van"></div>
                 <div class="stories__item">
                     <h3 class="stories__text-title">The Longest journey in my life!</h3>
                     <p class="stories__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
-                    <p><a class="stories__link" href="#">Read More</a></p>
+                    <p class="stories__link stories__link_hover"><a class="stories__link-item" href="#">Read More</a></p>
                 </div>
-                <button class="stories__button stories__button_hover button">See More</button>
+                <button class="stories__button button button_arrow button_hover">See More</button>
         </div>
     </div>
     </div>
@@ -111,11 +134,11 @@
     </main>
     <footer class="footer container grid">
         <p class="footer__copyright">All rights reserved &copy; travel portal</p>
-        <div class="footer__logo-items">
-            <a class="footer__link" href="https://github.com/Intrstng"><img class="footer__logo" src="images/inst.svg" alt="Github"></a>
-            <a class="footer__link" href="https://www.youtube.com/c/RollingScopesSchool"><img class="footer__logo" src="images/youtube.svg" alt="Youtube"></a>
-            <a class="footer__link" href="https://rs.school/"><img class="footer__logo" src="images/twitter.svg" alt="Rolling School"></a>
-        </div>
+        <ul class="footer__logo-items">
+            <li class="footer__nav footer__nav_hover"><a class="footer__link" href="https://github.com/Intrstng"><img class="footer__logo" src="images/inst.svg" alt="Github"></a></li>
+            <li class="footer__nav footer__nav_hover"><a class="footer__link" href="https://www.youtube.com/c/RollingScopesSchool"><img class="footer__logo" src="images/youtube.svg" alt="Youtube"></a></li>
+            <li class="footer__nav footer__nav_hover"><a class="footer__link" href="https://rs.school/js-stage0"><img class="footer__logo" src="images/twitter.svg" alt="Rolling School"></a></li>
+        </ul>
 </div>
     </body>
     </html>
