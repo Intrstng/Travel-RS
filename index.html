@@ -24,16 +24,72 @@
             <div class="header__logo"><p>Travel portal</p></div>
                 <nav class="header__navigation">
                     <ul class="header__nav grid">
-                        <li class="header__nav-item header__nav-item_hover"><a class="header__nav-link" href="#">How it works</a></li>
+                        <li class="header__nav-item header__nav-item_hover"><a class="header__nav-link" href="#how-works">How it works</a></li>
                         <li class="header__nav-item header__nav-item_hover"><a class="header__nav-link" href="#plan-your-trip">Plan your trip</a></li>
                         <li class="header__nav-item header__nav-item_hover"><a class="header__nav-link" href="#destinations">Destinations</a></li>
                         <li class="header__nav-item header__nav-item_hover"><a class="header__nav-link" href="#travel-stories">Travel Stories</a></li>
                     </ul>
-                    <div class="header__burger"><span></span></div>
+                    <div class="header__burger header__burger_hover" onclick="openNav()"><span></span></div>
+                        <div class="header__burger-menu" id="burger-menu">
+                            <a href="javascript:void(0)" class="header__closebtn" onclick="closeNav()"><img class="image-close" src="images/close.svg" alt="close"></a>
+                            <ul class="header__sidenav">
+                                <li class="header__menubox-item header__menubox-item_hover"><a class="header__menubox-link" href="#how-works">How it works</a></li>
+                                <li class="header__menubox-item header__menubox-item_hover"><a class="header__menubox-link" href="#plan-your-trip">Plan your trip</a></li>
+                                <li class="header__menubox-item header__menubox-item_hover"><a class="header__menubox-link" href="#destinations">Destinations</a></li>
+                                <li class="header__menubox-item header__menubox-item_hover"><a class="header__menubox-link" href="#travel-stories">Travel Stories</a></li>
+                                <li class="header__menubox-item header__menubox-item_hover"><a class="header__menubox-link" href="#" onclick="closeNav()">Account</a></li>
+                                <li class="header__menubox-item header__menubox-item_hover"><a class="header__menubox-link" href="#social-media">Social Media</a></li>
+                            </ul>
+                    </div>
                 </nav>
-                <button class="header__button button button_hover ">Login</button>
+                <button class="header__button button button_hover" id="LogBtn">Login</button>
             </div>
         </div>
+
+
+<!-- Login popup 
+======================= -->
+<div class="login-popup" id="loginPopup">
+    <div class="login-popup-container popup">
+      <div class="login-popup__wrapper popup-wrapper">
+        <h3 class="login-popup__title popup-title">Log in to your account</h3>
+        <a class="login-popup__facebook-btn social-btn"><span>Sign In with Facebook</span></a>
+        <a class="login-popup__google-btn social-btn">Sign In with Google</a>
+          <div class="login-popup__hr hr-line"><span>or</span></div>
+            <form class="login-popup__form popup-form" action="/action_page.php" method="post">
+              <label for="email" class="login-popup__label-mail label-mail">E-mail</label>
+              <input class="login-popup__input-mail input-mail popup-placeholder" type="email" id="email" name="email">
+                  <label for="pass" class="login-popup__label-pass label-pass">Password</label>
+                  <input class="login-popup__input-pass input-pass popup-placeholder" type="password" id="pass" name="pass">
+                      <input class="login-popup__input-submitbtn input-submitbtn button" type="submit" value="Sign In">
+                      <a href="#">Forgot your password?</a>
+                      <hr class="login-popup-single__hr">
+                        <p>Don’t have an account? <a href="#" id="regBtn">Register</a></p>
+          </form>
+        </div>
+      </div>
+  </div>
+
+<!-- Sign in popup 
+======================= -->
+                  <div class="sign-popup" id="signPopup">
+                    <div class="sign-popup-container popup">
+                      <div class="signpopup__wrapper popup-wrapper">
+                        <h3 class="sign-popup__title popup-title">Create account</h3>
+                            <form class="sign-popup__form popup-form" action="/action_page.php" method="post">
+                              <label for="email" class="sign-popup__label-mail label-mail">E-mail</label>
+                              <input class="sign-popup__input-mail input-mail popup-placeholder" type="email" id="email" name="email">
+                                  <label for="pass" class="sign-popup__label-pass label-pass">Password</label>
+                                  <input class="sign-popup__input-pass input-pass popup-placeholder" type="password" id="pass" name="pass">
+                                      <input class="sign-popup__input-submitbtn input-submitbtn button" type="submit" value="Sign Up">
+                                      <hr class="sign-popup-single__hr">
+                                        <p>Already have an account? <a href="#" id="backToLoginBtn">Log in</a></p>
+                          </form>
+                        </div>
+                      </div>
+                    </div>
+
+
     </header>
     <main>
 
@@ -42,7 +98,7 @@
 
         <section class="preview container">
             <div class="preview__wrapper grid">
-            <h1 class="preview__title">Explore the beauty of the World</h1>
+            <h1 class="preview__title" id="how-works">Explore the beauty of the World</h1>
             <p class="preview__text">Receive personalized recommendations for countries, hotels, activities and more</p>
             <form class="preview__search" action="/action_page.php" method="get">
                 <input class="preview__input" type="search" name="planning" id="myplanning" placeholder="What would you like to do?">
@@ -79,16 +135,17 @@
 <section class="destinations" id="destinations">
     <h2 class="destinations__subtitle subtitle">Popular destinations</h2>
     <div class="destinations__wrapper">
-        <div class="destinations__content">
+        <div class="destinations__slider-container">
+            <div class="destinations__slider-track"></div>
             <div class="destinations__slide"><img class="destinations__image" src="images/Spain.jpg" alt="Spain"><span class="destinations__name">Spain</span></div>
             <div class="destinations__slide"><img class="destinations__image" src="images/Japan.jpg" alt="Japan"><span class="destinations__name">Japan</span></div>
             <div class="destinations__slide"><img class="destinations__image" src="images/USA.jpg" alt="USA"><span class="destinations__name">USA</span></div>
         </div>
     </div>
     <div class="destinations__pagination">
-        <div class="destination__pagination-item destination__pagination-item_hover destination__pagination-item_active"></div>
-        <div class="destination__pagination-item destination__pagination-item_hover destination__pagination-item_active"></div>
-        <div class="destination__pagination-item destination__pagination-item_hover destination__pagination-item_active"></div>
+        <a class="destination__pagination-item destination__pagination-item_hover destination__pagination-item_active" href="#"><div></div></a>
+        <a class="destination__pagination-item destination__pagination-item_hover destination__pagination-item_active" href="#"><div></div></a>
+        <a class="destination__pagination-item destination__pagination-item_hover destination__pagination-item_active" href="#"><div></div></a>
     </div>
     <button class="destinations__button button button_arrow button_hover">Find More</button>
 
@@ -132,7 +189,7 @@
     </div>
 </section>
     </main>
-    <footer class="footer container grid">
+    <footer class="footer container grid" id="social-media">
         <p class="footer__copyright">All rights reserved &copy; travel portal</p>
         <ul class="footer__logo-items">
             <li class="footer__nav footer__nav_hover"><a class="footer__link" href="https://github.com/Intrstng"><img class="footer__logo" src="images/inst.svg" alt="Github"></a></li>
@@ -140,5 +197,6 @@
             <li class="footer__nav footer__nav_hover"><a class="footer__link" href="https://rs.school/js-stage0"><img class="footer__logo" src="images/twitter.svg" alt="Rolling School"></a></li>
         </ul>
 </div>
+    <script src="scripts/script.js"></script>
     </body>
     </html>

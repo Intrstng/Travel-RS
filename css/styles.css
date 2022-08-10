@@ -51,7 +51,7 @@ html {
     list-style-type: none;
 }
 
-.header__logo {
+.header__logo > p {
     font-family: 'Magra', sans-serif;
     font-style: normal;
     font-weight: 600;
@@ -103,11 +103,15 @@ html {
     left: 0;
     right: 0;
     margin: 0 auto;
-    transition: width 0.2s ease-out
+    transition: width 0.2s ease-out;
 }
 
 .header__nav-item_hover:hover > a::after {
     width: 100%;
+}
+
+.header__nav-item_hover:hover .header__nav-link {
+    color: rgba(255, 255, 255, 0.7);
 }
 
 .header__nav-item_hover {
@@ -123,12 +127,12 @@ html {
 }
 
 .button {
-    font-family: 'Red Hat Text', sans-serif;
+    font-family: "Red Hat Text", sans-serif;
     font-weight: 500;
     font-size: 16px;
     line-height: 1.3;
     color: rgb(255, 255, 255);
-    background: #0D606F;
+    background: rgb(13,96,111);
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 2px 3px rgba(13, 96, 111, 0.16);
     border-radius: 10px;
     border: none;
@@ -157,6 +161,438 @@ html {
     color: rgb(255, 255, 255);
     opacity: 0.85;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1), 0px 4px 6px rgba(13, 96, 111, 0.08);
+}
+
+
+/* Burger button
+======================= */
+                            .header__burger,
+                            .header__burger-menu {
+                                display: none;
+                            }
+                            .header__burger {
+                                margin-left: 20px;
+                            }
+
+
+@media (max-width: 767px) {
+                            .header__burger {
+                                display: block;
+                                    width: 34px;
+                                    height: 34px;
+
+                            }
+                            .header__burger-menu {
+                                display: block;
+                            }
+                            .header__nav,
+                            .header__button {
+                                display: none;
+                            }     
+                            .header__inner {
+                                grid-template-columns: 1fr 60px;
+                                    
+                            }
+                            .header__navigation {
+                                margin-left: 0;
+                            }
+                            }
+
+.header__burger_hover {
+    transition: transform 0.2s ease;
+}
+
+.header__burger_hover:hover {
+    transform: scale(1.16);
+    cursor: pointer;
+}
+
+.header__burger span {
+    display: block;
+    width: 26px;
+    height: 2.6px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 2px;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.header__burger span:before {
+    content: "";
+    display: block;
+    width: 26px;
+    height: 2.6px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 2px;
+    position: absolute;
+    top: -8px;
+    left: 0;
+}
+
+.header__burger span:after {
+    content: "";
+    display: block;
+    width: 26px;
+    height: 2.6px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 2px;
+    position: absolute;
+    top: 8px;
+    left: 0;
+}
+
+/* Side burger panel 
+======================= */
+
+.header__burger-menu {
+    width: 0;
+        height: 250px;
+    background: #F2785C;
+    box-shadow: 0px 4px 3px rgba(13, 96, 111, 0.25);
+    border-radius: 10px;
+    position: relative;                 
+    transition: 0.3s;
+                overflow: hidden;        /* !!! */
+                z-index: 10;
+                position: fixed;        /* !!! */
+                top: 0;
+                right: 0;
+}
+
+.header__closebtn {
+    position: absolute;
+    top: 7px;
+    left: 7px;
+    transition: transform 0.2s ease;
+}
+
+.header__closebtn:hover {
+    transform: scale(1.16);
+}
+
+.header__sidenav {
+    list-style-type: none;
+    padding: 44px 15px 30px 44px;
+    text-align: end;
+    margin: 0;
+}
+
+.header__menubox-link {
+    font-family: 'Red Hat Text', sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.3;
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    text-transform: capitalize;
+}
+
+.header__menubox-item {
+    margin-bottom: 10px;
+}
+
+.header__menubox-item_hover {
+    transition: transform 0.2s ease;
+}
+
+.header__menubox-item_hover:hover {
+    transform: scale(1.1) translateX(-5px);
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.header__menubox-item_hover:hover .header__menubox-link {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+/* Login pop up 
+======================= */
+
+
+.popup {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 650px;
+    overflow: hidden;
+    background: linear-gradient(177.09deg, #FFFFFF 6.15%, #0D606F 202.69%);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 16px;
+    color: rgb(13,96,111);
+}
+
+.popup-wrapper {
+    flex-basis: 650px;
+    height: 100%;
+    padding: 25px 45px 25px 45px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.popup-title {
+    font-family: "Aleo", serif;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 1.18;
+    color: rgb(13,96,111);
+    margin-bottom: 30px;
+}
+
+.social-btn {
+    text-align: center;
+    width: 100%;
+    height: 56px;
+    font-family: "Red Hat Text", sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 1.3;
+    text-align: center;
+    box-shadow: 0px 0px 3px rgba(13, 96, 111, 0.08), 0px 2px 3px rgba(13, 96, 111, 0.16);
+    border-radius: 10px;
+    padding: 15px 0 15px 40px;
+}
+
+.login-popup__facebook-btn {
+    margin-bottom: 20px;
+    font-family: "Red Hat Text", sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 1.3;
+    color:rgb(255, 255, 255);
+    background-color: rgb(24, 119, 242);
+    background-image: url("../images/Facebook\ Logo.svg");
+    background-repeat: no-repeat;
+    background-position: calc(50% - 104px) center;
+}
+
+
+.login-popup__google-btn {
+    background-color: rgb(255, 255, 255);
+    margin-bottom: 30px;
+    background-image: url("../images/Google\ Logo.svg");
+    background-repeat: no-repeat;
+    background-position: calc(50% - 94px) center;
+}
+
+.login-popup__hr {
+    width: 100%;
+    font-family: "Aleo", serif;
+    text-align: center;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 1.2;
+    overflow: hidden;
+    position: relative;
+    color: rgba(13, 96, 111, 0.5);
+    margin-bottom: 10px;
+}
+
+.login-popup__hr:before {
+    content: "";
+    width: 50%;
+    height: 1px;
+    background-color: rgba(13, 96, 111, 0.5);
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: -18px;
+}
+
+.login-popup__hr:after {
+    content: "";
+    width: 50%;
+    height: 1px;
+    background-color: rgba(13, 96, 111, 0.5);
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: -20px;
+}
+
+.popup-form {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.popup-form a, p {
+    color: rgb(13,96,111);
+}
+
+.label-mail,
+.label-pass {
+    align-self: flex-start;
+    font-family: "Aleo", serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.2;
+    color: rgb(13,96,111);
+}
+
+.login-popup__label-mail,
+.login-popup__label-pass,
+.sign-popup__label-mail,
+.sign-popup__label-pass {
+    margin-bottom: 5px;
+}
+
+.social-btn,
+.input-mail,
+.input-pass,
+.input-submitbtn
+ {
+    width: 100%;
+}
+
+.input-mail,
+.input-pass {
+    height: 54px;
+    overflow: hidden;
+    background: rgb(255, 255, 255);
+    box-shadow: inset 0px 0px 3px rgba(13, 96, 111, 0.08), inset 0px 2px 3px rgba(13, 96, 111, 0.16);
+    -moz-box-shadow: inset 0px 0px 3px rgba(13, 96, 111, 0.08), inset 0px 2px 3px rgba(13, 96, 111, 0.16);
+    -webkit-box-shadow: inset 0px 0px 3px rgba(13, 96, 111, 0.08), inset 0px 2px 3px rgba(13, 96, 111, 0.16);
+    border-radius: 10px;
+}
+
+.login-popup__input-mail,
+.sign-popup__input-mail {
+    margin-bottom: 20px;
+}
+
+.login-popup__input-pass,
+.sign-popup__input-pass {
+    margin-bottom: 25px;
+}
+.popup-placeholder,
+.popup-placeholder::placeholder {
+    font-family: "Arial", "Helvetica", sans-serif;
+    font-style: italic;
+    padding: 0 20px;
+    color: rgb(13,96,111);
+    outline: none;
+}
+
+.input-submitbtn[value] {
+    font-family: "Red Hat Text", sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 1.3px;
+    padding: 26px 0;
+}
+
+.login-popup__input-submitbtn {
+    margin-bottom: 10px;
+}
+
+.sign-popup__input-submitbtn {
+    margin-bottom: 26px;
+}
+
+.popup-form a {
+    font-family: "Aleo", serif;
+    font-weight: 700;
+    font-size: 15px;
+    line-height: 1.2;
+    text-transform: capitalize;
+    color: rgb(13,96,111);
+    text-shadow: 0px 2px 3px rgba(255, 255, 255, 0.16);
+}
+
+.login-popup-single__hr,
+.sign-popup-single__hr {
+            width: 100%;
+            height: 1px;
+            margin: 0 0 20px;
+            color: rgba(13, 96, 111, 0.5);
+            background-color: rgba(13, 96, 111, 0.5);
+            border: none;
+}
+
+.popup-form p {
+    font-family: "Aleo", serif;
+    font-weight: 700;
+    font-size: 15px;
+    line-height: 1.2;
+    color: rgba(13, 96, 111, 0.5);
+    text-shadow: 0px 2px 3px rgba(255, 255, 255, 0.16);
+}
+
+.sign-popup__form p {
+   padding-left: 10px;
+}
+
+.popup-form p > a {
+    font-family: "Aleo", serif;
+    font-weight: 700;
+    font-size: 15px;
+    line-height: 1.2px;
+    text-shadow: 0px 2px 3px rgba(255, 255, 255, 0.16);
+}
+
+.login-popup__form a {
+    margin-bottom: 25px;
+}
+
+
+/* Popups 
+==================== */
+
+/* The Modal Login (background) */
+.login-popup {
+    display: none;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4);
+}
+
+/* Modal Login Content */
+.login-popup-container {
+   position: fixed;
+   left: 0;
+   right: 0;
+   width: 100%;
+   margin-left: auto;
+   margin-right: auto;
+   top: 50%;
+   transform: translateY(-50%);
+}
+
+/* The Modal Sign in (background) */
+.sign-popup {
+    display: none;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4);
+}
+
+/* Modal Sign in Content */
+.sign-popup-container {
+   position: fixed;
+   left: 0;
+   right: 0;
+   width: 100%;
+   margin-left: auto;
+   margin-right: auto;
+   top: 50%;
+   transform: translateY(-50%);
 }
 
 
@@ -311,7 +747,7 @@ padding: 0 13px 0 10px;
     margin-bottom: 24px;
 }
 
-                        .destinations__content {
+                        .destinations__slider-container {
                             width: 2520px;
                             height: 800px;
                             margin: 0 auto;
@@ -360,12 +796,18 @@ padding: 0 13px 0 10px;
     border-radius: 50%;
 }
 
-.destination__pagination-item_hover {
-
+.destination__pagination-item_hover,
+.destination__pagination-item_active {
+    transition: background-color 0.3s ease;
 }
 
-                            .destination__pagination-item_focus:focus {
+.destination__pagination-item_hover:hover {
+    background-color: #F2785C;
+}
+
+                            .destination__pagination-item_active:focus {
                                 background-color: #F2785C;
+                                outline: none;
                             }
 
 
