@@ -21,7 +21,7 @@
     <header class="header">
         <div class="header__top">
             <div class="header__inner container grid">
-            <div class="header__logo"><p>Travel portal</p></div>
+            <div class="header__logo header__logo_hover"><p>Travel portal</p></div>
                 <nav class="header__navigation">
                     <ul class="header__nav grid">
                         <li class="header__nav-item header__nav-item_hover"><a class="header__nav-link" href="#how-works">How it works</a></li>
@@ -53,18 +53,18 @@
     <div class="login-popup-container popup">
       <div class="login-popup__wrapper popup-wrapper">
         <h3 class="login-popup__title popup-title">Log in to your account</h3>
-        <a class="login-popup__facebook-btn social-btn"><span>Sign In with Facebook</span></a>
-        <a class="login-popup__google-btn social-btn">Sign In with Google</a>
+        <a class="login-popup__facebook-btn login-popup__facebook-btn_hover social-btn " href="#"><span>Sign In with Facebook</span></a>
+        <a class="login-popup__google-btn login-popup__google-btn_hover social-btn" href="#">Sign In with Google</a>
           <div class="login-popup__hr hr-line"><span>or</span></div>
             <form class="login-popup__form popup-form" action="/action_page.php" method="post">
               <label for="email" class="login-popup__label-mail label-mail">E-mail</label>
-              <input class="login-popup__input-mail input-mail popup-placeholder" type="email" id="email" name="email">
+              <input class="login-popup__input-mail input-mail popup-placeholder" type="email" id="email" name="email" required>
                   <label for="pass" class="login-popup__label-pass label-pass">Password</label>
-                  <input class="login-popup__input-pass input-pass popup-placeholder" type="password" id="pass" name="pass">
-                      <input class="login-popup__input-submitbtn input-submitbtn button" type="submit" value="Sign In">
-                      <a href="#">Forgot your password?</a>
-                      <hr class="login-popup-single__hr">
-                        <p>Don’t have an account? <a href="#" id="regBtn">Register</a></p>
+                  <input class="login-popup__input-pass input-pass popup-placeholder" type="password" id="pass" name="pass" required>
+                      <input class="login-popup__input-submitbtn input-submitbtn button button_hover" type="submit" value="Sign In">
+                        <a class="login-popup__link login-popup__link_hover" href="#">Forgot your password?</a>
+                            <hr class="login-popup-single__hr">
+                                <p>Don’t have an account? <a class="login-popup__link login-popup__link_hover" href="#" id="regBtn">Register</a></p>
           </form>
         </div>
       </div>
@@ -80,10 +80,10 @@
                               <label for="email" class="sign-popup__label-mail label-mail">E-mail</label>
                               <input class="sign-popup__input-mail input-mail popup-placeholder" type="email" id="email" name="email">
                                   <label for="pass" class="sign-popup__label-pass label-pass">Password</label>
-                                  <input class="sign-popup__input-pass input-pass popup-placeholder" type="password" id="pass" name="pass">
-                                      <input class="sign-popup__input-submitbtn input-submitbtn button" type="submit" value="Sign Up">
+                                  <input class="sign-popup__input-pass input-pass popup-placeholder" type="password" id="pass" name="pass" required>
+                                      <input class="sign-popup__input-submitbtn input-submitbtn button button_hover" type="submit" value="Sign Up">
                                       <hr class="sign-popup-single__hr">
-                                        <p>Already have an account? <a href="#" id="backToLoginBtn">Log in</a></p>
+                                        <p>Already have an account? <a class="sign-popup__link sign-popup__link_hover"href="#" id="backToLoginBtn">Log in</a></p>
                           </form>
                         </div>
                       </div>
@@ -102,7 +102,7 @@
             <p class="preview__text">Receive personalized recommendations for countries, hotels, activities and more</p>
             <form class="preview__search" action="/action_page.php" method="get">
                 <input class="preview__input" type="search" name="planning" id="myplanning" placeholder="What would you like to do?">
-                <button class="preview__button button button_hover" type="submit" name="planning-button" value="Submit">Start Planning</button>
+                <button class="preview__button button_hover button" type="submit" name="planning-button" value="Submit">Start Planning</button>
             </form>
         </div>
         </section>
@@ -134,14 +134,11 @@
 ======================== -->
 <section class="destinations" id="destinations">
     <h2 class="destinations__subtitle subtitle">Popular destinations</h2>
-    <div class="destinations__wrapper">
-        <div class="destinations__slider-container">
-            <div class="destinations__slider-track"></div>
-            <div class="destinations__slide"><img class="destinations__image" src="images/Spain.jpg" alt="Spain"><span class="destinations__name">Spain</span></div>
-            <div class="destinations__slide"><img class="destinations__image" src="images/Japan.jpg" alt="Japan"><span class="destinations__name">Japan</span></div>
-            <div class="destinations__slide"><img class="destinations__image" src="images/USA.jpg" alt="USA"><span class="destinations__name">USA</span></div>
-        </div>
-    </div>
+            <div class="destinations__slider-track">
+                <div class="destinations__slide"><img class="destinations__image" src="images/Spain.jpg" alt="Spain"><span class="destinations__name">Spain</span></div>
+                <div class="destinations__slide"><img class="destinations__image" src="images/Japan.jpg" alt="Japan"><span class="destinations__name">Japan</span></div>
+                <div class="destinations__slide"><img class="destinations__image" src="images/USA.jpg" alt="USA"><span class="destinations__name">USA</span></div>
+            </div>
     <div class="destinations__pagination">
         <a class="destination__pagination-item destination__pagination-item_hover destination__pagination-item_active" href="#"><div></div></a>
         <a class="destination__pagination-item destination__pagination-item_hover destination__pagination-item_active" href="#"><div></div></a>
@@ -163,25 +160,25 @@
                 <div class="stories__item">
                     <h3 class="stories__text-title">10 Photos of Attractive Thailand</h3>
                     <p class="stories__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
-                    <p class="stories__link stories__link_hover"><a class="stories__link-item" href="#">Read More</a></p>
+                    <p class="stories__link"><a class="stories__link-item stories__link-item_hover" href="#">Read More</a></p>
                 </div>
             <div class="stories__image-card stories__image-card_hover"><img class="stories__image stories__image_hover" src="images/road.jpg" alt="road"></div>
                 <div class="stories__item">
                     <h3 class="stories__text-title">Canyonlands National Park, Utah</h3>
                     <p class="stories__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
-                    <p class="stories__link stories__link_hover"><a class="stories__link-item" href="#">Read More</a></p>
+                    <p class="stories__link"><a class="stories__link-item stories__link-item_hover" href="#">Read More</a></p>
                 </div>
             <div class="stories__image-card stories__image-card_hover"><img class="stories__image stories__image_hover" src="images/mountains.jpg" alt="mountains"></div>
                 <div class="stories__item">
                     <h3 class="stories__text-title">I left my heart in the Mountains!</h3>
                     <p class="stories__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
-                    <p class="stories__link stories__link_hover"><a class="stories__link-item" href="#">Read More</a></p>
+                    <p class="stories__link"><a class="stories__link-item stories__link-item_hover" href="#">Read More</a></p>
                 </div>
             <div class="stories__image-card stories__image-card_hover"><img class="stories__image stories__image_hover" src="images/van.jpg" alt="van"></div>
                 <div class="stories__item">
                     <h3 class="stories__text-title">The Longest journey in my life!</h3>
                     <p class="stories__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
-                    <p class="stories__link stories__link_hover"><a class="stories__link-item" href="#">Read More</a></p>
+                    <p class="stories__link"><a class="stories__link-item stories__link-item_hover" href="#">Read More</a></p>
                 </div>
                 <button class="stories__button button button_arrow button_hover">See More</button>
         </div>
