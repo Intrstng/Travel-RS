@@ -21,7 +21,7 @@
     <header class="header">
         <div class="header__top">
             <div class="header__inner container grid">
-            <div class="header__logo header__logo_hover"><p>Travel portal</p></div>
+            <div class="header__logo header__logo_hover"><p><span>Travel portal</span></p></div>
                 <nav class="header__navigation">
                     <ul class="header__nav grid">
                         <li class="header__nav-item header__nav-item_hover"><a class="header__nav-link" href="#how-works">How it works</a></li>
@@ -32,7 +32,7 @@
                     <div class="header__burger header__burger_hover" onclick="openNav()"><span></span></div>
                         <div class="header__burger-menu" id="burger-menu">
                             <a href="javascript:void(0)" class="header__closebtn" onclick="closeNav()"><img class="image-close" src="images/close.svg" alt="close"></a>
-                            <ul class="header__sidenav">
+                                <ul class="header__sidenav">
                                 <li class="header__menubox-item header__menubox-item_hover"><a class="header__menubox-link" href="#how-works">How it works</a></li>
                                 <li class="header__menubox-item header__menubox-item_hover"><a class="header__menubox-link" href="#plan-your-trip">Plan your trip</a></li>
                                 <li class="header__menubox-item header__menubox-item_hover"><a class="header__menubox-link" href="#destinations">Destinations</a></li>
@@ -41,7 +41,7 @@
                                 <li class="header__menubox-item header__menubox-item_hover"><a class="header__menubox-link" href="#social-media">Social Media</a></li>
                             </ul>
                     </div>
-                </nav>
+                 </nav>
                 <button class="header__button button button_hover" id="LogBtn">Login</button>
             </div>
         </div>
@@ -50,15 +50,14 @@
 <!-- Login popup 
 ======================= -->
 <div class="login-popup" id="loginPopup">
-    <div class="login-popup-container popup">
-      <div class="login-popup__wrapper popup-wrapper">
+    <div class="login-popup-container popup popup-wrapper">
         <h3 class="login-popup__title popup-title">Log in to your account</h3>
         <a class="login-popup__facebook-btn login-popup__facebook-btn_hover social-btn " href="#"><span>Sign In with Facebook</span></a>
         <a class="login-popup__google-btn login-popup__google-btn_hover social-btn" href="#">Sign In with Google</a>
           <div class="login-popup__hr hr-line"><span>or</span></div>
             <form class="login-popup__form popup-form" action="/action_page.php" method="post">
               <label for="email" class="login-popup__label-mail label-mail">E-mail</label>
-              <input class="login-popup__input-mail input-mail popup-placeholder" type="email" id="email" name="email" required>
+              <input class="login-popup__input-mail input-mail popup-placeholder" type="email" id="email" name="email" autofocus required>
                   <label for="pass" class="login-popup__label-pass label-pass">Password</label>
                   <input class="login-popup__input-pass input-pass popup-placeholder" type="password" id="pass" name="pass" required>
                       <input class="login-popup__input-submitbtn input-submitbtn button button_hover" type="submit" value="Sign In">
@@ -66,7 +65,6 @@
                             <hr class="login-popup-single__hr">
                                 <p>Don’t have an account? <a class="login-popup__link login-popup__link_hover" href="#" id="regBtn">Register</a></p>
           </form>
-        </div>
       </div>
   </div>
 
@@ -78,7 +76,7 @@
                         <h3 class="sign-popup__title popup-title">Create account</h3>
                             <form class="sign-popup__form popup-form" action="/action_page.php" method="post">
                               <label for="email" class="sign-popup__label-mail label-mail">E-mail</label>
-                              <input class="sign-popup__input-mail input-mail popup-placeholder" type="email" id="email" name="email">
+                              <input class="sign-popup__input-mail input-mail popup-placeholder" type="email" id="email" name="email" autofocus required>
                                   <label for="pass" class="sign-popup__label-pass label-pass">Password</label>
                                   <input class="sign-popup__input-pass input-pass popup-placeholder" type="password" id="pass" name="pass" required>
                                       <input class="sign-popup__input-submitbtn input-submitbtn button button_hover" type="submit" value="Sign Up">
@@ -96,7 +94,7 @@
 <!-- Preview
 ======================== -->
 
-        <section class="preview container">
+        <section class="preview preview-position container">
             <div class="preview__wrapper grid">
             <h1 class="preview__title" id="how-works">Explore the beauty of the World</h1>
             <p class="preview__text">Receive personalized recommendations for countries, hotels, activities and more</p>
