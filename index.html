@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zxx">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -21,32 +21,86 @@
     <header class="header">
         <div class="header__top">
             <div class="header__inner container grid">
-            <div class="header__logo"><p>Travel portal</p></div>
+            <div class="header__logo header__logo_hover"><p><span>Travel portal</span></p></div>
                 <nav class="header__navigation">
                     <ul class="header__nav grid">
-                        <li class="header__nav-item header__nav-item_hover"><a class="header__nav-link" href="#">How it works</a></li>
+                        <li class="header__nav-item header__nav-item_hover"><a class="header__nav-link" href="#how-works">How it works</a></li>
                         <li class="header__nav-item header__nav-item_hover"><a class="header__nav-link" href="#plan-your-trip">Plan your trip</a></li>
                         <li class="header__nav-item header__nav-item_hover"><a class="header__nav-link" href="#destinations">Destinations</a></li>
                         <li class="header__nav-item header__nav-item_hover"><a class="header__nav-link" href="#travel-stories">Travel Stories</a></li>
                     </ul>
-                    <div class="header__burger"><span></span></div>
-                </nav>
-                <button class="header__button button button_hover ">Login</button>
+                    <div class="header__burger header__burger_hover" onclick="openNav()"><span></span></div>
+                        <div class="header__burger-menu" id="burger-menu">
+                            <a href="javascript:void(0)" class="header__closebtn" onclick="closeNav()"><img class="image-close" src="images/close.svg" alt="close"></a>
+                                <ul class="header__sidenav">
+                                <li class="header__menubox-item header__menubox-item_hover"><a class="header__menubox-link" href="#">How it works</a></li>
+                                <li class="header__menubox-item header__menubox-item_hover"><a class="header__menubox-link" href="#plan-your-trip">Plan your trip</a></li>
+                                <li class="header__menubox-item header__menubox-item_hover"><a class="header__menubox-link" href="#destinations">Destinations</a></li>
+                                <li class="header__menubox-item header__menubox-item_hover"><a class="header__menubox-link" href="#travel-stories">Travel Stories</a></li>
+                                <li class="header__menubox-item header__menubox-item_hover"><a class="header__menubox-link" href="#" onclick="closeNav()" id="LogBtnBurger">Account</a></li>
+                                <li class="header__menubox-item header__menubox-item_hover"><a class="header__menubox-link" href="#social-media">Social Media</a></li>
+                            </ul>
+                    </div>
+                 </nav>
+                <button class="header__button button button_hover" id="LogBtn">Login</button>
             </div>
         </div>
+
+
+<!-- Login popup 
+======================= -->
+<div class="login-popup" id="loginPopup">
+    <div class="login-popup-container popup popup-wrapper">
+        <h3 class="login-popup__title popup-title">Log in to your account</h3>
+        <a class="login-popup__facebook-btn login-popup__facebook-btn_hover social-btn " href="https://www.facebook.com/login/?privacy_mutation_token=eyJ0eXBlIjowLCJjcmVhdGlvbl90aW1lIjoxNjYwNjUzNDQ1LCJjYWxsc2l0ZV9pZCI6MjY5NTQ4NDUzMDcyMDk1MX0%3D"><span>Sign In with Facebook</span></a>
+        <a class="login-popup__google-btn login-popup__google-btn_hover social-btn" href="https://accounts.google.com/signin/v2/identifier?hl=be&passive=true&continue=https%3A%2F%2Fwww.google.com%2F&ec=GAZAmgQ&flowName=GlifWebSignIn&flowEntry=ServiceLogin">Sign In with Google</a>
+          <div class="login-popup__hr hr-line"><span>or</span></div>
+            <form class="login-popup__form popup-form" action="/action_page.php" method="post">
+              <label for="emailLogin" class="login-popup__label-mail label-mail">E-mail</label>
+              <input class="login-popup__input-mail input-mail popup-placeholder" type="email" id="emailLogin" name="email" autofocus required>
+                  <label for="passLogin" class="login-popup__label-pass label-pass">Password</label>
+                  <input class="login-popup__input-pass input-pass popup-placeholder" type="password" id="passLogin" name="pass" required>
+                      <input class="login-popup__input-submitbtn input-submitbtn button button_hover" type="submit" value="Sign In">
+                        <a class="login-popup__link login-popup__link_hover" href="#">Forgot your password?</a>
+                            <hr class="login-popup-single__hr">
+                                <p>Don’t have an account? <a class="login-popup__link login-popup__link_hover" href="#" id="regBtn">Register</a></p>
+          </form>
+      </div>
+  </div>
+
+<!-- Sign in popup 
+======================= -->
+                  <div class="sign-popup" id="signPopup">
+                    <div class="sign-popup-container popup">
+                      <div class="signpopup__wrapper popup-wrapper">
+                        <h3 class="sign-popup__title popup-title">Create account</h3>
+                            <form class="sign-popup__form popup-form" action="/action_page.php" method="post">
+                              <label for="emailSign" class="sign-popup__label-mail label-mail">E-mail</label>
+                              <input class="sign-popup__input-mail input-mail popup-placeholder" type="email" id="emailSign" name="email" required>
+                                  <label for="passSign" class="sign-popup__label-pass label-pass">Password</label>
+                                  <input class="sign-popup__input-pass input-pass popup-placeholder" type="password" id="passSign" name="pass" required>
+                                      <input class="sign-popup__input-submitbtn input-submitbtn button button_hover" type="submit" value="Sign Up">
+                                      <hr class="sign-popup-single__hr">
+                                        <p>Already have an account? <a class="sign-popup__link sign-popup__link_hover" href="#" id="backToLoginBtn">Log in</a></p>
+                          </form>
+                        </div>
+                      </div>
+                    </div>
+
+
     </header>
     <main>
 
 <!-- Preview
 ======================== -->
 
-        <section class="preview container">
+        <section class="preview preview-position container">
             <div class="preview__wrapper grid">
-            <h1 class="preview__title">Explore the beauty of the World</h1>
+            <h1 class="preview__title" id="how-works">Explore the beauty of the World</h1>
             <p class="preview__text">Receive personalized recommendations for countries, hotels, activities and more</p>
             <form class="preview__search" action="/action_page.php" method="get">
                 <input class="preview__input" type="search" name="planning" id="myplanning" placeholder="What would you like to do?">
-                <button class="preview__button button button_hover" type="submit" name="planning-button" value="Submit">Start Planning</button>
+                <button class="preview__button button_hover button" type="submit" name="planning-button" value="Submit">Start Planning</button>
             </form>
         </div>
         </section>
@@ -58,17 +112,17 @@
             <h2 class="steps__subtitle subtitle">3 steps to the perfect trip</h2>
             <div class="steps__items-row container grid">
                 <a class="step__item step__item_hover" href="#">
-                    <img class="step__item-logo logo-position" src="images/Cycling.svg">
+                    <img class="step__item-logo logo-position" src="images/Cycling.svg" alt="cycling">
                         <p class="step__item-text">Tell us what you want to do</p>
                 </a>
               
                 <a class="step__item step__item_hover" href="#">
-                    <img class="step__item-logo logo-position" src="images/Calendar.svg">
+                    <img class="step__item-logo logo-position" src="images/Calendar.svg" alt="calendar">
                         <p class="step__item-text">Share us preferable dates</p>
                 </a>
                 
                 <a class="step__item step__item_hover" href="#">
-                    <img class="step__item-logo logo-position" src="images/Plane.svg">
+                    <img class="step__item-logo logo-position" src="images/Plane.svg" alt="plane">
                         <p class="step__item-text">We will give you recommendations</p>
                 </a>
         </div>
@@ -76,19 +130,34 @@
 
 <!-- Destinations
 ======================== -->
-<section class="destinations" id="destinations">
+<section class="destinations container-mob" id="destinations">
     <h2 class="destinations__subtitle subtitle">Popular destinations</h2>
-    <div class="destinations__wrapper">
-        <div class="destinations__content">
-            <div class="destinations__slide"><img class="destinations__image" src="images/Spain.jpg" alt="Spain"><span class="destinations__name">Spain</span></div>
-            <div class="destinations__slide"><img class="destinations__image" src="images/Japan.jpg" alt="Japan"><span class="destinations__name">Japan</span></div>
-            <div class="destinations__slide"><img class="destinations__image" src="images/USA.jpg" alt="USA"><span class="destinations__name">USA</span></div>
-        </div>
-    </div>
+            <div class="destinations__slider-track">
+                <div class="destinations__slide">
+                    <picture>
+                        <source srcset="images/mobile/Spain-mob.jpg" media="(max-width: 390px)">
+                        <img class="destinations__image" src="images/Spain.jpg" alt="Spain">
+                    </picture><span class="destinations__name">Spain</span>
+                </div>
+                    <div class="destinations__slide">
+                        <picture>
+                            <source srcset="images/mobile/Japan-mob.jpg" media="(max-width: 390px)">
+                            <img class="destinations__image" src="images/Japan.jpg" alt="Japan">
+                        </picture><span class="destinations__name">Japan</span>
+                    </div>
+                        <div class="destinations__slide">
+                            <picture>
+                                <source srcset="images/mobile/US-mob.jpg" media="(max-width: 390px)">
+                                <img class="destinations__image" src="images/USA.jpg" alt="USA">
+                            </picture><span class="destinations__name">USA</span>
+                        </div>
+            </div>
+        <div class="destinations__arrow-left"></div>
+        <div class="destinations__arrow-right"></div>
     <div class="destinations__pagination">
-        <div class="destination__pagination-item destination__pagination-item_hover destination__pagination-item_active"></div>
-        <div class="destination__pagination-item destination__pagination-item_hover destination__pagination-item_active"></div>
-        <div class="destination__pagination-item destination__pagination-item_hover destination__pagination-item_active"></div>
+        <a class="destination__pagination-item destination__pagination-item_hover destination__pagination-item_active" href="#"><div></div></a>
+        <a class="destination__pagination-item destination__pagination-item_hover destination__pagination-item_active" href="#"><div></div></a>
+        <a class="destination__pagination-item destination__pagination-item_hover destination__pagination-item_active" href="#"><div></div></a>
     </div>
     <button class="destinations__button button button_arrow button_hover">Find More</button>
 
@@ -102,43 +171,65 @@
     <div class="stories__wrapper">
         <div class="stories__content">
         <div class="stories__inner container grid">
-            <div class="stories__image-card stories__image-card_hover"><img class="stories__image stories__image_hover" src="images/boat.jpg" alt="boat"></div>
-                <div class="stories__item">
-                    <h3 class="stories__text-title">10 Photos of Attractive Thailand</h3>
-                    <p class="stories__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
-                    <p class="stories__link stories__link_hover"><a class="stories__link-item" href="#">Read More</a></p>
-                </div>
-            <div class="stories__image-card stories__image-card_hover"><img class="stories__image stories__image_hover" src="images/road.jpg" alt="road"></div>
-                <div class="stories__item">
-                    <h3 class="stories__text-title">Canyonlands National Park, Utah</h3>
-                    <p class="stories__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
-                    <p class="stories__link stories__link_hover"><a class="stories__link-item" href="#">Read More</a></p>
-                </div>
-            <div class="stories__image-card stories__image-card_hover"><img class="stories__image stories__image_hover" src="images/mountains.jpg" alt="mountains"></div>
-                <div class="stories__item">
-                    <h3 class="stories__text-title">I left my heart in the Mountains!</h3>
-                    <p class="stories__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
-                    <p class="stories__link stories__link_hover"><a class="stories__link-item" href="#">Read More</a></p>
-                </div>
-            <div class="stories__image-card stories__image-card_hover"><img class="stories__image stories__image_hover" src="images/van.jpg" alt="van"></div>
-                <div class="stories__item">
-                    <h3 class="stories__text-title">The Longest journey in my life!</h3>
-                    <p class="stories__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
-                    <p class="stories__link stories__link_hover"><a class="stories__link-item" href="#">Read More</a></p>
-                </div>
+            <div class="stories__image-card stories__image-card_hover">
+                <picture>
+                        <source srcset="images/mobile/boat-mob.jpg" media="(max-width: 390px)">
+                        <img class="stories__image stories__image_hover" src="images/boat.jpg" alt="boat">
+                </picture>
+            </div>
+                    <div class="stories__item">
+                        <h3 class="stories__text-title">10 Photos of Attractive Thailand</h3>
+                        <p class="stories__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+                        <p class="stories__link"><a class="stories__link-item stories__link-item_hover" href="#">Read More</a></p>
+                    </div>
+                        <div class="stories__image-card stories__image-card_hover">
+                            <picture>
+                                    <source srcset="images/mobile/road-mob.jpg" media="(max-width: 390px)">
+                                    <img class="stories__image stories__image_hover" src="images/road.jpg" alt="road">
+                            </picture>
+                        </div>
+                            <div class="stories__item">
+                                <h3 class="stories__text-title">Canyonlands National Park, Utah</h3>
+                                <p class="stories__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+                                <p class="stories__link"><a class="stories__link-item stories__link-item_hover" href="#">Read More</a></p>
+                            </div>
+                                <div class="stories__image-card stories__image-card_hover">
+                                    <picture>
+                                            <source srcset="images/mobile/mountains-mob.jpg" media="(max-width: 390px)">
+                                            <img class="stories__image stories__image_hover" src="images/mountains.jpg" alt="mountains">
+                                    </picture>
+                                </div>
+                                    <div class="stories__item">
+                                        <h3 class="stories__text-title">I left my heart in the Mountains!</h3>
+                                        <p class="stories__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+                                        <p class="stories__link"><a class="stories__link-item stories__link-item_hover" href="#">Read More</a></p>
+                                    </div>
+                                    <div class="stories__image-card stories__image-card_hover">
+                                        <picture>
+                                                <source srcset="images/mobile/van-mob.jpg" media="(max-width: 390px)">
+                                                <img class="stories__image stories__image_hover" src="images/van.jpg" alt="van">
+                                        </picture>
+                                    </div>
+                                        <div class="stories__item">
+                                            <h3 class="stories__text-title">The Longest journey in my life!</h3>
+                                            <p class="stories__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+                                            <p class="stories__link"><a class="stories__link-item stories__link-item_hover" href="#">Read More</a></p>
+                                        </div>
                 <button class="stories__button button button_arrow button_hover">See More</button>
         </div>
     </div>
     </div>
 </section>
     </main>
-    <footer class="footer container grid">
+    <footer class="footer container grid" id="social-media">
         <p class="footer__copyright">All rights reserved &copy; travel portal</p>
         <ul class="footer__logo-items">
             <li class="footer__nav footer__nav_hover"><a class="footer__link" href="https://github.com/Intrstng"><img class="footer__logo" src="images/inst.svg" alt="Github"></a></li>
             <li class="footer__nav footer__nav_hover"><a class="footer__link" href="https://www.youtube.com/c/RollingScopesSchool"><img class="footer__logo" src="images/youtube.svg" alt="Youtube"></a></li>
             <li class="footer__nav footer__nav_hover"><a class="footer__link" href="https://rs.school/js-stage0"><img class="footer__logo" src="images/twitter.svg" alt="Rolling School"></a></li>
         </ul>
+    </footer>
 </div>
+    <script src="scripts/script.js"></script>
     </body>
     </html>
