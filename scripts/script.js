@@ -28,7 +28,7 @@ var logmodal = document.getElementById("loginPopup");
 
 // Get the button that opens the modal Login popup
 var logbtn = document.getElementById("LogBtn");
-
+var logbtns = document.getElementById("LogBtnBurger");
 // Get the button that closes modal and goes to Sign in popup
 var logspan = document.getElementById("regBtn")
 
@@ -41,7 +41,9 @@ var logspan = document.getElementById("regBtn")
 logbtn.onclick = function() {
     logmodal.style.display = "block";
 }
-
+logbtns.onclick = function() {
+  logmodal.style.display = "block";
+}
 // When the user clicks on <span> (regBtn - Register), closes the modal and goes to Sign in popup
 logspan.onclick = function() {
     logmodal.style.display = "none";
@@ -95,7 +97,7 @@ signspan.onclick = function() {
 
 // When the user clicks anywhere outside of the modal, close it
 
-/* Было: не работало сокрытие первого попапа по клуку на свободном месте 
+/* Было: не работало сокрытие первого попапа по клику на свободном месте 
 
 window.onclick = function(event) {
   if (event.target == signmodal) {

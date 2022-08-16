@@ -33,11 +33,11 @@
                         <div class="header__burger-menu" id="burger-menu">
                             <a href="javascript:void(0)" class="header__closebtn" onclick="closeNav()"><img class="image-close" src="images/close.svg" alt="close"></a>
                                 <ul class="header__sidenav">
-                                <li class="header__menubox-item header__menubox-item_hover"><a class="header__menubox-link" href="#how-works">How it works</a></li>
+                                <li class="header__menubox-item header__menubox-item_hover"><a class="header__menubox-link" href="#">How it works</a></li>
                                 <li class="header__menubox-item header__menubox-item_hover"><a class="header__menubox-link" href="#plan-your-trip">Plan your trip</a></li>
                                 <li class="header__menubox-item header__menubox-item_hover"><a class="header__menubox-link" href="#destinations">Destinations</a></li>
                                 <li class="header__menubox-item header__menubox-item_hover"><a class="header__menubox-link" href="#travel-stories">Travel Stories</a></li>
-                                <li class="header__menubox-item header__menubox-item_hover"><a class="header__menubox-link" href="#" onclick="closeNav()">Account</a></li>
+                                <li class="header__menubox-item header__menubox-item_hover"><a class="header__menubox-link" href="#" onclick="closeNav()" id="LogBtnBurger">Account</a></li>
                                 <li class="header__menubox-item header__menubox-item_hover"><a class="header__menubox-link" href="#social-media">Social Media</a></li>
                             </ul>
                     </div>
@@ -52,8 +52,8 @@
 <div class="login-popup" id="loginPopup">
     <div class="login-popup-container popup popup-wrapper">
         <h3 class="login-popup__title popup-title">Log in to your account</h3>
-        <a class="login-popup__facebook-btn login-popup__facebook-btn_hover social-btn " href="#"><span>Sign In with Facebook</span></a>
-        <a class="login-popup__google-btn login-popup__google-btn_hover social-btn" href="#">Sign In with Google</a>
+        <a class="login-popup__facebook-btn login-popup__facebook-btn_hover social-btn " href="https://www.facebook.com/login/?privacy_mutation_token=eyJ0eXBlIjowLCJjcmVhdGlvbl90aW1lIjoxNjYwNjUzNDQ1LCJjYWxsc2l0ZV9pZCI6MjY5NTQ4NDUzMDcyMDk1MX0%3D"><span>Sign In with Facebook</span></a>
+        <a class="login-popup__google-btn login-popup__google-btn_hover social-btn" href="https://accounts.google.com/signin/v2/identifier?hl=be&passive=true&continue=https%3A%2F%2Fwww.google.com%2F&ec=GAZAmgQ&flowName=GlifWebSignIn&flowEntry=ServiceLogin">Sign In with Google</a>
           <div class="login-popup__hr hr-line"><span>or</span></div>
             <form class="login-popup__form popup-form" action="/action_page.php" method="post">
               <label for="email" class="login-popup__label-mail label-mail">E-mail</label>
@@ -130,7 +130,7 @@
 
 <!-- Destinations
 ======================== -->
-<section class="destinations" id="destinations">
+<section class="destinations container-mob" id="destinations">
     <h2 class="destinations__subtitle subtitle">Popular destinations</h2>
             <div class="destinations__slider-track">
                 <div class="destinations__slide">
@@ -152,6 +152,8 @@
                             </picture>
                         </div>
             </div>
+        <div class="destinations__arrow-left"></div>
+        <div class="destinations__arrow-right"></div>
     <div class="destinations__pagination">
         <a class="destination__pagination-item destination__pagination-item_hover destination__pagination-item_active" href="#"><div></div></a>
         <a class="destination__pagination-item destination__pagination-item_hover destination__pagination-item_active" href="#"><div></div></a>
@@ -175,44 +177,44 @@
                         <img class="stories__image stories__image_hover" src="images/boat.jpg" alt="boat">
                 </picture>
             </div>
-                <div class="stories__item">
-                    <h3 class="stories__text-title">10 Photos of Attractive Thailand</h3>
-                    <p class="stories__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
-                    <p class="stories__link"><a class="stories__link-item stories__link-item_hover" href="#">Read More</a></p>
-                </div>
-            <div class="stories__image-card stories__image-card_hover">
-                <picture>
-                        <source srcset="images/mobile/road-mob.jpg" media="(max-width: 390px)">
-                        <img class="stories__image stories__image_hover" src="images/road.jpg" alt="road">
-                </picture>
-            </div>
-                <div class="stories__item">
-                    <h3 class="stories__text-title">Canyonlands National Park, Utah</h3>
-                    <p class="stories__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
-                    <p class="stories__link"><a class="stories__link-item stories__link-item_hover" href="#">Read More</a></p>
-                </div>
-            <div class="stories__image-card stories__image-card_hover">
-                <picture>
-                        <source srcset="images/mobile/mountains-mob.jpg" media="(max-width: 390px)">
-                        <img class="stories__image stories__image_hover" src="images/mountains.jpg" alt="mountains">
-                </picture>
-            </div>
-                <div class="stories__item">
-                    <h3 class="stories__text-title">I left my heart in the Mountains!</h3>
-                    <p class="stories__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
-                    <p class="stories__link"><a class="stories__link-item stories__link-item_hover" href="#">Read More</a></p>
-                </div>
-            <div class="stories__image-card stories__image-card_hover">
-                <picture>
-                        <source srcset="images/mobile/van-mob.jpg" media="(max-width: 390px)">
-                        <img class="stories__image stories__image_hover" src="images/van.jpg" alt="van">
-                </picture>
-            </div>
-                <div class="stories__item">
-                    <h3 class="stories__text-title">The Longest journey in my life!</h3>
-                    <p class="stories__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
-                    <p class="stories__link"><a class="stories__link-item stories__link-item_hover" href="#">Read More</a></p>
-                </div>
+                    <div class="stories__item">
+                        <h3 class="stories__text-title">10 Photos of Attractive Thailand</h3>
+                        <p class="stories__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+                        <p class="stories__link"><a class="stories__link-item stories__link-item_hover" href="#">Read More</a></p>
+                    </div>
+                        <div class="stories__image-card stories__image-card_hover">
+                            <picture>
+                                    <source srcset="images/mobile/road-mob.jpg" media="(max-width: 390px)">
+                                    <img class="stories__image stories__image_hover" src="images/road.jpg" alt="road">
+                            </picture>
+                        </div>
+                            <div class="stories__item">
+                                <h3 class="stories__text-title">Canyonlands National Park, Utah</h3>
+                                <p class="stories__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+                                <p class="stories__link"><a class="stories__link-item stories__link-item_hover" href="#">Read More</a></p>
+                            </div>
+                                <div class="stories__image-card stories__image-card_hover">
+                                    <picture>
+                                            <source srcset="images/mobile/mountains-mob.jpg" media="(max-width: 390px)">
+                                            <img class="stories__image stories__image_hover" src="images/mountains.jpg" alt="mountains">
+                                    </picture>
+                                </div>
+                                    <div class="stories__item">
+                                        <h3 class="stories__text-title">I left my heart in the Mountains!</h3>
+                                        <p class="stories__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+                                        <p class="stories__link"><a class="stories__link-item stories__link-item_hover" href="#">Read More</a></p>
+                                    </div>
+                                    <div class="stories__image-card stories__image-card_hover">
+                                        <picture>
+                                                <source srcset="images/mobile/van-mob.jpg" media="(max-width: 390px)">
+                                                <img class="stories__image stories__image_hover" src="images/van.jpg" alt="van">
+                                        </picture>
+                                    </div>
+                                        <div class="stories__item">
+                                            <h3 class="stories__text-title">The Longest journey in my life!</h3>
+                                            <p class="stories__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+                                            <p class="stories__link"><a class="stories__link-item stories__link-item_hover" href="#">Read More</a></p>
+                                        </div>
                 <button class="stories__button button button_arrow button_hover">See More</button>
         </div>
     </div>
